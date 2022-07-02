@@ -9,4 +9,3 @@ node_modules
 .vercel
 .output
 .vscode
-TSF_web_banking.session.sql
