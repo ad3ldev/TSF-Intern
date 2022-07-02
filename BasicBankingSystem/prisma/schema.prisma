@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Customers {
+  account_num     Int     @id @default(autoincrement())
+  name            String  @db.VarChar(255)
+  address         String? @db.VarChar(511)
+  phone           String? @unique(map: "phone") @db.VarChar(255)
+  email           String? @unique(map: "email") @db.VarChar(255)
+  current_balance Float?  @db.Float
+  country         String  @db.VarChar(2)
+}
+
+model Transfers {
+  tranfer_id   Int    @id @default(autoincrement())
+  from_account Int
+  to_account   Int
+  amount       Float? @db.Float
+}
