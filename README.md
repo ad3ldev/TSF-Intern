@@ -1,1 +1,9 @@
-# The Sparks Foundation Internship - 2022
+# Basic Banking System
+
+## Front End
+
+SvelteKit
+
+## Backend
+
+Supabase
