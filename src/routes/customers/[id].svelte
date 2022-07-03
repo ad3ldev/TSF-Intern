@@ -1,4 +1,4 @@
-<script contex="module">
+<script>
 	import dbStore from "$lib/stores/db.js";
 	import { page } from "$app/stores";
 	let id = $page.params.id;
