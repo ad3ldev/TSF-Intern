@@ -1,2 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Home Page</h1>
+<ul>
+	<li>
+		<a sveltekit:prefetch href="/customers">View all Customers</a>
+	</li>
+	<li>
+		<a sveltekit:prefetch href="/transfers">view all Transfers</a>
+	</li>
+</ul>
