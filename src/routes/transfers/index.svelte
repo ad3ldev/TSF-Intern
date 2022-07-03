@@ -20,12 +20,4 @@
 <div>
 	<h1>Transfers</h1>
 	<TransfersTable {transfers} />
-	<ul>
-		<li>
-			<a href="/">Home Page</a>
-		</li>
-		<li>
-			<a sveltekit:prefetch href="/customers">View all Customers</a>
-		</li>
-	</ul>
 </div>
