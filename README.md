@@ -1,8 +1,12 @@
 # Basic Banking System
 
-## Front End
+## Framework
 
 SvelteKit
+
+## Front End
+
+Sass (.scss files)
 
 ## Backend
 
