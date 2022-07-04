@@ -18,4 +18,4 @@ Prisma
 
 ### Caveats
 
-Unable to use prisma as my main database connection so I used.
+Unable to use prisma as my main database connection so I used. Supabase direct API is used instead
