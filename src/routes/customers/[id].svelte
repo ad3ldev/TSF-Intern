@@ -2,16 +2,17 @@
 	import dbStore from "$lib/stores/db.js";
 	import { page } from "$app/stores";
 	let id = $page.params.id;
-	const [data, loading, error, get] = dbStore(
+	const [data, reading, writing, error, get, set] = dbStore(
 		"customers",
 		"*",
 		"account_num",
 		`${id}`,
 	);
+	get();
 </script>
 
 <div class="customer">
-	{#if $loading}
+	{#if $reading}
 		<p>Loading</p>
 	{:else if $error}
 		<p>error</p>

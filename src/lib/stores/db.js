@@ -1,11 +1,12 @@
 import { writable } from "svelte/store";
 import supabase from "$lib/supabase.js";
-export default function (table, column, row, id) {
-	const loading = writable(false);
+export default function (table, column, row, id, request) {
+	const reading = writable(false);
+	const writing = writable(false);
 	const error = writable(false);
 	const data = writable({});
 	async function get() {
-		loading.set(true);
+		reading.set(true);
 		error.set(false);
 		try {
 			if (row == undefined) {
@@ -21,8 +22,10 @@ export default function (table, column, row, id) {
 		} catch (e) {
 			error.set(e);
 		}
-		loading.set(false);
+		reading.set(false);
 	}
-	get();
-	return [data, loading, error, get];
+	async function set() {
+		console.log("HELOOOOO");
+	}
+	return [data, reading, writing, error, get, set];
 }
