@@ -11,11 +11,8 @@ const config = {
 			assets: "docs",
 		}),
 		paths: {
-			base: dev ? "" : "/TSF-Intern/",
+			base: dev ? "" : "/TSF-Intern",
 		},
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: "#svelte",
-
 		vite: {
 			css: {
 				preprocessorOptions: {
