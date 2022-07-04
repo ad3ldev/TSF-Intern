@@ -5,7 +5,6 @@
 </script>
 
 <div>
-	<h1>Customers</h1>
 	{#if $loading}
 		<p>Loading</p>
 	{:else if $error}

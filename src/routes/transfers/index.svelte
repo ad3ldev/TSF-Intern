@@ -5,7 +5,6 @@
 </script>
 
 <div>
-	<h1>Transfers</h1>
 	{#if $loading}
 		<p>Loading</p>
 	{:else if $error}
