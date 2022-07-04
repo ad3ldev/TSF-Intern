@@ -10,12 +10,14 @@
 	<h2>No customers</h2>
 {:else}
 	<table>
-		<tr>
-			<th>Account</th>
-			<th>Name</th>
-			<th>Balance</th>
-			<th>Country</th>
-		</tr>
+		<thead>
+			<tr>
+				<th>Account</th>
+				<th>Name</th>
+				<th>Balance</th>
+				<th>Country</th>
+			</tr>
+		</thead>
 		<tbody>
 			{#each customers as customer (customer.account_num)}
 				<tr>
