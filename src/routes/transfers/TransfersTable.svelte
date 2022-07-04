@@ -9,24 +9,18 @@
 {#if transfers.length == 0}
 	<h2>No transfers</h2>
 {:else}
-	<table>
-		<thead>
-			<tr>
-				<th>Transfer</th>
-				<th>From Account Num</th>
-				<th>To Account Num</th>
-				<th>Amount</th>
-			</tr>
-		</thead>
-		<tbody>
-			{#each transfers as transfer (transfer.tranfer_id)}
-				<tr>
-					<td><a href="/">{transfer.tranfer_id}</a></td>
-					<td><a href="/">{transfer.from_account}</a></td>
-					<td><a href="/">{transfer.to_account}</a></td>
-					<td><a href="/">{transfer.amount}</a></td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
+	<div class="table">
+		<div class="th">Transfer</div>
+		<div class="th">From Account</div>
+		<div class="th">To Account</div>
+		<div class="th">Amount</div>
+		{#each transfers as transfer (transfer.tranfer_id)}
+			<a class="tr" href={`/transfers/${transfer.tranfer_id}`}>
+				<div class="td">{transfer.tranfer_id}</div>
+				<div class="td">{transfer.from_account}</div>
+				<div class="td">{transfer.to_account}</div>
+				<div class="td">{transfer.amount}</div>
+			</a>
+		{/each}
+	</div>
 {/if}

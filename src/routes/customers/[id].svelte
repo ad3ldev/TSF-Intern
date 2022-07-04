@@ -19,12 +19,18 @@
 		<div class="details">
 			<h1>{$data[0].name}</h1>
 			<ul>
-				<li><strong>Acount Number:</strong> {$data[0].account_num}</li>
-				<li><strong>Address:</strong> {$data[0].address}</li>
-				<li><strong>Phone:</strong> {$data[0].phone}</li>
-				<li><strong>Email:</strong> {$data[0].email}</li>
-				<li><strong>Country:</strong> {$data[0].country}</li>
-				<li
+				<li class="item"
+					><strong>Acount Number:</strong> {$data[0].account_num}</li
+				>
+				<li class="item"
+					><strong>Address:</strong> {$data[0].address}</li
+				>
+				<li class="item"><strong>Phone:</strong> {$data[0].phone}</li>
+				<li class="item"><strong>Email:</strong> {$data[0].email}</li>
+				<li class="item"
+					><strong>Country:</strong> {$data[0].country}</li
+				>
+				<li class="item"
 					><strong>Current Balance:</strong>
 					{$data[0].current_balance}</li
 				>
@@ -33,10 +39,20 @@
 	{/if}
 </div>
 
-<style>
+<style lang="scss">
 	.details {
 		display: grid;
-		justify-items: center;
-		width: 90%;
+		justify-items: start;
+		padding: 0 10%;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		.item {
+			display: grid;
+			padding: 0.5rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 </style>

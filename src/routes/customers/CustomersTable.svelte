@@ -9,24 +9,18 @@
 {#if customers.length == 0}
 	<h2>No customers</h2>
 {:else}
-	<table>
-		<thead>
-			<tr>
-				<th>Account</th>
-				<th>Name</th>
-				<th>Balance</th>
-				<th>Country</th>
-			</tr>
-		</thead>
-		<tbody>
-			{#each customers as customer (customer.account_num)}
-				<tr>
-					<td>{customer.account_num}</td>
-					<td>{customer.name}</td>
-					<td>{customer.current_balance}</td>
-					<td>{customer.country}</td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
+	<div class="table">
+		<div class="th">Account</div>
+		<div class="th">Name</div>
+		<div class="th">Balance</div>
+		<div class="th">Country</div>
+		{#each customers as customer (customer.account_num)}
+			<a class="tr" href={`/customers/${customer.account_num}`}>
+				<div class="td">{customer.account_num}</div>
+				<div class="td">{customer.name}</div>
+				<div class="td">{customer.current_balance}</div>
+				<div class="td">{customer.country}</div>
+			</a>
+		{/each}
+	</div>
 {/if}
