@@ -11,17 +11,15 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-netlify": "^1.0.0-next.66",
     "@sveltejs/kit": "next",
-    "sass": "^1.53.0",
     "svelte": "^3.44.0",
+    "sass": "^1.53.0",
     "svelte-preprocess": "^4.10.7"
   },
   "type": "module",
   "dependencies": {
     "@prisma/client": "4.0.0",
     "@supabase/supabase-js": "^1.35.4",
-    "faunadb": "^4.6.0",
     "prisma": "^4.0.0"
   }
 }
