@@ -17,8 +17,8 @@
 		{#each transfers as transfer (transfer.tranfer_id)}
 			<a class="tr" href={`/transfers/${transfer.tranfer_id}`}>
 				<div class="td">{transfer.tranfer_id}</div>
-				<div class="td">{transfer.from_account}</div>
-				<div class="td">{transfer.to_account}</div>
+				<div class="td">{transfer.from_customer}</div>
+				<div class="td">{transfer.to_customer}</div>
 				<div class="td">{transfer.amount}</div>
 			</a>
 		{/each}
