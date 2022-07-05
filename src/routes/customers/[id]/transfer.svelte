@@ -7,22 +7,53 @@
 
 	const [data, reading, errorRead, get] = dbStore();
 	const [writing, errorWrite, set] = updateStore();
-	const [validating, validError, validate] = validateStore();
+	const [validData, validating, validError, validate] = validateStore();
 
 	get("customers", "*", "account_num", `${id}`);
+
+	let request = {
+		amount: 0.99,
+		date: "2069-6-6",
+		time: "03:00",
+		from_customer: 10,
+		to_customer: 9,
+	};
+
+	function moneny_to_number(string) {
+		return Number(string.replace(/[^0-9.-]+/g, ""));
+	}
 	async function addTransfer() {
-		let request = {
-			amount: 500,
-			date: "2069-6-6",
-			time: "03:00",
-			from_customer: 1,
-			to_customer: 9,
-		};
-		await validate("customers", "account_num", "account_num", 1);
-		await validate("customers", "account_num", "account_num", 2);
+		await validate(
+			"customers",
+			"account_num,current_balance",
+			"account_num",
+			request.from_customer,
+		);
+		let sender = moneny_to_number($validData[0].current_balance);
+		if (sender >= request.amount) {
+			await validate(
+				"customers",
+				"account_num,current_balance",
+				"account_num",
+				request.to_customer,
+			);
+		}
+		let receiver = moneny_to_number($validData[0].current_balance);
+		sender = sender - request.amount;
+		receiver = receiver + request.amount;
 		if (!$validError) {
-			console.log("hello");
-			set("transfers", request);
+			await set("transfers", request, false);
+			let update1 = {
+				customer: request.from_customer,
+				balance: sender,
+			};
+			let update2 = {
+				customer: request.to_customer,
+				balance: receiver,
+			};
+			await set("customers", update1, true);
+			await set("customers", update2, true);
+			console.log("here");
 		}
 	}
 </script>
