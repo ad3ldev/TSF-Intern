@@ -12,17 +12,18 @@
 	get("customers", "*", "account_num", `${id}`);
 
 	let request = {
-		amount: 0.99,
+		amount: 0.01,
 		date: "2069-6-6",
 		time: "03:00",
-		from_customer: 10,
-		to_customer: 9,
+		from_customer: 1,
+		to_customer: 7,
 	};
 
 	function moneny_to_number(string) {
 		return Number(string.replace(/[^0-9.-]+/g, ""));
 	}
 	async function addTransfer() {
+		writing.set(true);
 		await validate(
 			"customers",
 			"account_num,current_balance",
@@ -53,7 +54,7 @@
 			};
 			await set("customers", update1, true);
 			await set("customers", update2, true);
-			console.log("here");
+			writing.set(false);
 		}
 	}
 </script>
