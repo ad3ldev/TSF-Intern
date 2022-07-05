@@ -10,7 +10,7 @@
 {#if customers.length == 0}
 	<h2>No customers</h2>
 {:else}
-	<div class="table" in:fade out:scale|local>
+	<div class="table" in:fade={0.33} out:scale|local>
 		<div class="th">Account</div>
 		<div class="th">Name</div>
 		<div class="th">Balance</div>
