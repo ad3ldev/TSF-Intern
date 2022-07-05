@@ -1,8 +1,8 @@
 <script context="module">
 	import TransfersTable from "./TransfersTable.svelte";
 	import dbStore from "$lib/stores/db.js";
-	const [data, reading, writing, error, get, set] = dbStore("transfers", "*");
-	get();
+	const [data, reading, error, get] = dbStore();
+	get("transfers", "*");
 </script>
 
 <div>

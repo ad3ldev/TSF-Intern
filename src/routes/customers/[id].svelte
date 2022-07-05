@@ -2,13 +2,8 @@
 	import dbStore from "$lib/stores/db.js";
 	import { page } from "$app/stores";
 	let id = $page.params.id;
-	const [data, reading, writing, error, get, set] = dbStore(
-		"customers",
-		"*",
-		"account_num",
-		`${id}`,
-	);
-	get();
+	const [data, reading, error, get] = dbStore();
+	get("customers", "*", "account_num", `${id}`);
 </script>
 
 <div class="customer">

@@ -1,8 +1,8 @@
 <script context="module">
 	import CustomersTable from "./CustomersTable.svelte";
 	import dbStore from "$lib/stores/db.js";
-	const [data, reading, writing, error, get, set] = dbStore("customers", "*");
-	get();
+	const [data, reading, error, get] = dbStore();
+	get("customers", "*");
 </script>
 
 <div>
