@@ -37,6 +37,7 @@
 				>
 			</ul>
 		</div>
+		<button><a href={`./${id}/transfer`}>Transfer</a></button>
 	{/if}
 </div>
 
