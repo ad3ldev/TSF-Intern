@@ -3,13 +3,14 @@
 </script>
 
 <script>
+	import { fade, scale } from "svelte/transition";
 	export let customers;
 </script>
 
 {#if customers.length == 0}
 	<h2>No customers</h2>
 {:else}
-	<div class="table">
+	<div class="table" in:fade out:scale|local>
 		<div class="th">Account</div>
 		<div class="th">Name</div>
 		<div class="th">Balance</div>

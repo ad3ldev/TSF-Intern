@@ -3,13 +3,14 @@
 </script>
 
 <script>
+	import { fade, scale } from "svelte/transition";
 	export let transfers;
 </script>
 
 {#if transfers.length == 0}
 	<h2>No transfers</h2>
 {:else}
-	<div class="table">
+	<div class="table" in:fade out:scale|local>
 		<div class="th">Transfer</div>
 		<div class="th">From Account</div>
 		<div class="th">To Account</div>

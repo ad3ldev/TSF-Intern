@@ -102,6 +102,8 @@
 </nav>
 
 <style lang="scss">
+	$animation: 0.33s;
+
 	.navbar {
 		background: #1b58a8;
 
@@ -119,19 +121,29 @@
 				margin: 0 1.5rem;
 				list-style-type: none;
 				justify-self: end;
+
 				a {
 					box-sizing: border-box;
 					text-decoration: none;
 					color: #fff;
 					font-size: clamp(0.5rem, 0.0385rem + 2.3077vw, 1.25rem);
+					border-bottom: 2px solid #1b58a8;
+					transition: border-bottom $animation ease;
+					transition: font-size $animation ease;
 				}
 				.active {
+					font-size: clamp(0.75rem, 0.1875rem + 2.5vw, 1.5rem);
 					padding-bottom: 0.2rem;
 					border-bottom: 2px solid white;
+					transition: border-bottom $animation ease;
+					transition: font-size $animation ease;
 				}
 			}
 
 			.icon {
+				a {
+					border-bottom: none;
+				}
 				justify-self: center;
 				img {
 					width: clamp(2.5rem, 0.6538rem + 9.2308vw, 5.5rem);
