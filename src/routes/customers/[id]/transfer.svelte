@@ -3,6 +3,7 @@
 	import updateStore from "$lib/stores/update.js";
 	import validateStore from "$lib/stores/validate";
 	import Button from "$lib/components/Button.svelte";
+	import Loading from "$lib/components/Loading.svelte";
 	import { page } from "$app/stores";
 	let id = $page.params.id;
 
@@ -60,11 +61,10 @@
 	}
 </script>
 
-{#if $reading}
-	<p>Loading</p>
-{:else if $errorRead}
-	<p>error</p>
-{:else}
+<Loading showLoading={$reading} />
+{#if $errorRead}
+	<p>errorRead</p>
+{:else if !$reading && !$errorRead}
 	<a sveltekit:prefetch href={`../${id}`}>
 		<Button>Back</Button>
 	</a>

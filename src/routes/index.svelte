@@ -4,6 +4,9 @@
 	let showLoading = false;
 	let toggleLoading = () => {
 		showLoading = !showLoading;
+		setTimeout(() => {
+			showLoading = !showLoading;
+		}, 5000);
 	};
 </script>
 

@@ -1,9 +1,10 @@
-<button>
+<button on:click>
 	<slot />
 </button>
 
 <style lang="scss">
 	button {
+		font-size: clamp(0.5rem, 0.0385rem + 2.3077vw, 1rem);
 		padding: 1rem;
 		background-color: #1b58a8;
 		color: white;

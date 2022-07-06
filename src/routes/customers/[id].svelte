@@ -3,19 +3,19 @@
 	import { page } from "$app/stores";
 	import Card from "$lib/components/Card.svelte";
 	import Button from "$lib/components/Button.svelte";
+	import Loading from "$lib/components/Loading.svelte";
 
 	let id = $page.params.id;
 	const [data, reading, error, get] = dbStore();
 	get("customers", "*", "account_num", `${id}`);
 </script>
 
+<Loading showLoading={$reading} />
 <Card>
 	<div class="customer">
-		{#if $reading}
-			<p>Loading</p>
-		{:else if $error}
+		{#if $error}
 			<p>error</p>
-		{:else}
+		{:else if !$reading && !$error}
 			<div class="details">
 				<h1>{$data[0].name}</h1>
 				<ul>
