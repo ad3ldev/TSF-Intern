@@ -1,6 +1,5 @@
 <script>
 	import Loading from "$lib/components/Loading.svelte";
-	import Button from "$lib/components/Button.svelte";
 	let showLoading = false;
 	let toggleLoading = () => {
 		showLoading = !showLoading;
@@ -12,4 +11,13 @@
 
 <Loading {showLoading} on:click={toggleLoading} />
 
-<Button on:click={toggleLoading}>Hello</Button>
+<div class="home" />
+
+<style>
+	.home {
+		width: 100%;
+		height: 100%;
+		background: url(/src/lib/assets/bank.jpg) no-repeat center center;
+		background-size: cover;
+	}
+</style>

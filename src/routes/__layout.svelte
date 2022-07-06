@@ -10,8 +10,7 @@
 
 <style lang="scss">
 	* {
-		height: calc(100vh - 6.5rem);
+		height: calc(100vh - 5.4rem);
 		box-sizing: border-box;
-		overflow: hidden;
 	}
 </style>

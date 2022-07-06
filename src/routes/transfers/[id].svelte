@@ -2,12 +2,12 @@
 	import dbStore from "$lib/stores/db.js";
 	import { page } from "$app/stores";
 	import Card from "$lib/components/Card.svelte";
-	import Button from "$lib/components/Button.svelte";
 	import Loading from "$lib/components/Loading.svelte";
+	import Button from "$lib/components/Button.svelte";
 
 	let id = $page.params.id;
 	const [data, reading, error, get] = dbStore();
-	get("customers", "*", "account_num", `${id}`);
+	get("transfers", "*", "tranfer_id", `${id}`);
 </script>
 
 <Loading showLoading={$reading} />
@@ -17,33 +17,27 @@
 	</a>
 </div>
 <Card>
-	<div class="customer">
+	<div class="transfer">
 		{#if $error}
 			<p>error</p>
 		{:else if !$reading && !$error}
-			<h1>{$data[0].name}</h1>
 			<div class="details">
+				<h1>Transfer ID: {$data[0].tranfer_id}</h1>
 				<ul>
 					<li class="item"
-						><p>Acount Number</p>
-						<p>{$data[0].account_num}</p>
+						><p>From Account</p>
+						<p>{$data[0].from_customer}</p>
 					</li>
 					<li class="item"
-						><p>Address</p> <p>{$data[0].address}</p></li
+						><p>To Account</p> <p>{$data[0].to_customer}</p></li
 					>
-					<li class="item"><p>Phone</p> <p>{$data[0].phone}</p></li>
-					<li class="item"><p>Email</p><p>{$data[0].email}</p> </li>
-					<li class="item"
-						><p>Country</p> <p>{$data[0].country}</p></li
-					>
+					<li class="item"><p>Date</p> <p>{$data[0].date}</p></li>
+					<li class="item"><p>Time</p><p>{$data[0].time}</p> </li>
 					<li class="money">
-						<p class="title">Current Balance</p>
+						<p class="title">Amount transfered</p>
 						<p class="balance">
-							{$data[0].current_balance}
+							{$data[0].amount}
 						</p>
-						<a sveltekit:prefetch href={`./${id}/transfer`}
-							><Button>Transfer</Button>
-						</a>
 					</li>
 				</ul>
 			</div>
@@ -59,7 +53,7 @@
 		padding: 0;
 		margin: 1rem 0;
 	}
-	.customer {
+	.transfer {
 		display: grid;
 		grid-template-rows: 1fr 9fr;
 		justify-items: center;
@@ -70,37 +64,40 @@
 		box-sizing: border-box;
 	}
 	.details {
+		width: 100%;
+		height: 100%;
 		padding: 1rem;
 		display: grid;
 		justify-items: center;
 		align-items: center;
-		width: 100%;
-		height: 100%;
 	}
 	ul {
+		display: flex;
 		margin: 0;
-		padding: 0;
+		padding: 1rem;
 		height: 100%;
 		width: 100%;
 		list-style-type: none;
-		display: flex;
 		flex-direction: column;
 		justify-content: space-evenly;
 
 		.money {
 			display: flex;
 			width: 100%;
-			align-items: center;
+			flex-direction: column;
 			justify-content: space-between;
 			padding-bottom: 1rem;
 
 			.balance {
-				font-size: 1.5rem;
+				padding: 0;
+				margin: 0;
+				font-size: 2.5rem;
 				font-weight: bold;
-				padding: 0 1rem;
+				align-self: center;
 			}
 			.title {
 				color: hsl(214, 72%, 58%);
+				padding: 1rem 0;
 			}
 		}
 
@@ -146,7 +143,6 @@
 			.money {
 				flex-direction: column;
 				align-items: start;
-				a,
 				.balance {
 					align-self: center;
 				}
