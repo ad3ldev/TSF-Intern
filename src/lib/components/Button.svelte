@@ -14,9 +14,11 @@
 		cursor: pointer;
 		transition: scale 0.2s ease;
 	}
-	button:hover {
-		scale: 1.15;
-		transition: scale 0.2s ease;
+	@media (hover: hover) and (pointer: fine) {
+		button:hover {
+			scale: 1.15;
+			transition: scale 0.2s ease;
+		}
 	}
 	button:active {
 		scale: 0.85;
