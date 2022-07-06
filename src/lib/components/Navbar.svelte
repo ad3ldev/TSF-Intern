@@ -60,6 +60,7 @@
 	<ul>
 		<li class="icon">
 			<a
+				sveltekit:prefetch
 				href="/"
 				on:click={() => {
 					changeTab("");
@@ -70,6 +71,7 @@
 		</li>
 		<li>
 			<a
+				sveltekit:prefetch
 				class:active={home}
 				on:click={() => {
 					changeTab("");
@@ -79,6 +81,7 @@
 		</li>
 		<li>
 			<a
+				sveltekit:prefetch
 				class:active={customers}
 				on:click={() => {
 					changeTab("customers");
@@ -88,11 +91,11 @@
 		</li>
 		<li>
 			<a
+				sveltekit:prefetch
 				class:active={transfers}
 				on:click={() => {
 					changeTab("transfers");
 				}}
-				sveltekit:prefetch
 				href="/transfers">Transfers</a
 			>
 		</li>

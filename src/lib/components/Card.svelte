@@ -1,4 +1,8 @@
-<div class="card">
+<script>
+	import { scale } from "svelte/transition";
+</script>
+
+<div in:scale class="card">
 	<slot />
 </div>
 
