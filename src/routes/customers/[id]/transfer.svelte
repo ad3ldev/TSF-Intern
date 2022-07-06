@@ -178,6 +178,7 @@
 					padding: 1rem;
 					border: none;
 					border-radius: 1rem;
+					width: 60%;
 					box-shadow: 0 0 1rem 0.1rem
 						rgba($color: #000000, $alpha: 0.1);
 				}

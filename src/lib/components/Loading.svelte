@@ -14,6 +14,7 @@
 		width: 10rem;
 		aspect-ratio: 1;
 		display: grid;
+		-webkit-mask: conic-gradient(from 15deg, #0000, #000);
 		mask: conic-gradient(from 15deg, #0000, #000);
 		animation: load 1s steps(12) infinite;
 	}
