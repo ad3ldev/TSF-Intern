@@ -24,7 +24,6 @@
 				<div class="td">{customer.account_num}</div>
 				<div class="td">{customer.name}</div>
 				<div class="td">{customer.current_balance}</div>
-				<div class="td">{customer.country}</div>
 			</a>
 		{/each}
 	</div>
