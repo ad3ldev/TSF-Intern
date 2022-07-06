@@ -15,4 +15,8 @@
 		padding: 0;
 		margin: 0;
 	}
+	main {
+		height: 100%;
+		width: 100%;
+	}
 </style>

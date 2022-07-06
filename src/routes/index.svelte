@@ -1,6 +1,6 @@
 <script>
 	import Loading from "$lib/components/Loading.svelte";
-
+	import Button from "$lib/components/Button.svelte";
 	let showLoading = false;
 	let toggleLoading = () => {
 		showLoading = !showLoading;
@@ -9,4 +9,4 @@
 
 <Loading {showLoading} on:click={toggleLoading} />
 
-<button on:click={toggleLoading}>Hello</button>
+<Button on:click={toggleLoading}>Hello</Button>

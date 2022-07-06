@@ -2,6 +2,7 @@
 	import dbStore from "$lib/stores/db.js";
 	import updateStore from "$lib/stores/update.js";
 	import validateStore from "$lib/stores/validate";
+	import Button from "$lib/components/Button.svelte";
 	import { page } from "$app/stores";
 	let id = $page.params.id;
 
@@ -64,13 +65,15 @@
 {:else if $errorRead}
 	<p>error</p>
 {:else}
-	<button>
-		<a href={`../${id}`}>Back</a>
-	</button>
+	<a href={`../${id}`}>
+		<Button>Back</Button>
+	</a>
 	<h1>{$data[0].current_balance}</h1>
-	<button
+	<Button
 		on:click={() => {
 			addTransfer();
-		}}>Trial</button
+		}}
 	>
+		Trial
+	</Button>
 {/if}
