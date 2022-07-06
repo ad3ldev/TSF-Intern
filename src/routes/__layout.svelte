@@ -14,6 +14,7 @@
 		font-family: "Roboto Mono", monospace;
 		padding: 0;
 		margin: 0;
+		font-size: clamp(0.5rem, 0.0385rem + 2.3077vw, 1rem);
 	}
 	main {
 		height: 100%;
