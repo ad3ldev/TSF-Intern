@@ -65,7 +65,7 @@
 {:else if $errorRead}
 	<p>error</p>
 {:else}
-	<a href={`../${id}`}>
+	<a sveltekit:prefetch href={`../${id}`}>
 		<Button>Back</Button>
 	</a>
 	<h1>{$data[0].current_balance}</h1>

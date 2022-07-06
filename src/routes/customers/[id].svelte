@@ -37,7 +37,9 @@
 					<p>
 						{$data[0].current_balance}
 					</p>
-					<a href={`./${id}/transfer`}><Button>Transfer</Button></a>
+					<a sveltekit:prefetch href={`./${id}/transfer`}
+						><Button>Transfer</Button></a
+					>
 				</div>
 			</div>
 		{/if}

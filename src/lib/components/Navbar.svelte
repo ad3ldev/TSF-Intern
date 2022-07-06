@@ -61,6 +61,7 @@
 		<li class="icon">
 			<a
 				href="/"
+				sveltekit:prefetch
 				on:click={() => {
 					changeTab("");
 				}}

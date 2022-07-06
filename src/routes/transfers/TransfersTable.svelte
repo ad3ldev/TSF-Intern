@@ -16,7 +16,11 @@
 		<div class="th">To Account</div>
 		<div class="th">Amount</div>
 		{#each transfers as transfer (transfer.tranfer_id)}
-			<a class="tr" href={`/transfers/${transfer.tranfer_id}`}>
+			<a
+				sveltekit:prefetch
+				class="tr"
+				href={`/transfers/${transfer.tranfer_id}`}
+			>
 				<div class="td">{transfer.tranfer_id}</div>
 				<div class="td">{transfer.from_customer}</div>
 				<div class="td">{transfer.to_customer}</div>

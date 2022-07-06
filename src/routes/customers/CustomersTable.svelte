@@ -16,7 +16,11 @@
 		<div class="th">Balance</div>
 		<div class="th">Country</div>
 		{#each customers as customer (customer.account_num)}
-			<a class="tr" href={`/customers/${customer.account_num}`}>
+			<a
+				sveltekit:prefetch
+				class="tr"
+				href={`/customers/${customer.account_num}`}
+			>
 				<div class="td">{customer.account_num}</div>
 				<div class="td">{customer.name}</div>
 				<div class="td">{customer.current_balance}</div>
