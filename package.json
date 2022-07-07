@@ -1,6 +1,6 @@
 {
   "name": "tsf-intern",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "GPL-3.0-only",
   "scripts": {
     "dev": "svelte-kit dev",
