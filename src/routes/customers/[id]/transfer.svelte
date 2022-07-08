@@ -49,41 +49,46 @@
 	async function addTransfer() {
 		done = false;
 		writing.set(true);
-		await validate(
-			"customers",
-			"account_num,current_balance",
-			"account_num",
-			request.from_customer,
-		);
-		let sender = moneny_to_number($validData[0].current_balance);
-		if (sender >= request.amount) {
+		errorWrite.set(false);
+		if (request.from_customer != request.to_customer) {
 			await validate(
 				"customers",
 				"account_num,current_balance",
 				"account_num",
-				request.to_customer,
+				request.from_customer,
 			);
-			let receiver = moneny_to_number($validData[0].current_balance);
-			sender = sender - request.amount;
-			receiver = receiver + request.amount;
-			if (!$validError) {
-				request.time = formatTime(new Date());
-				request.date = formatDate(new Date());
-				await set("transfers", request, false);
-				let update1 = {
-					customer: request.from_customer,
-					balance: sender,
-				};
-				let update2 = {
-					customer: request.to_customer,
-					balance: receiver,
-				};
-				await set("customers", update1, true);
-				await set("customers", update2, true);
-				done = true;
+			let sender = moneny_to_number($validData[0].current_balance);
+			if (sender >= request.amount && request.amount > 0) {
+				await validate(
+					"customers",
+					"account_num,current_balance",
+					"account_num",
+					request.to_customer,
+				);
+				let receiver = moneny_to_number($validData[0].current_balance);
+				sender = sender - request.amount;
+				receiver = receiver + request.amount;
+				if (!$validError) {
+					request.time = formatTime(new Date());
+					request.date = formatDate(new Date());
+					await set("transfers", request, false);
+					let update1 = {
+						customer: request.from_customer,
+						balance: sender,
+					};
+					let update2 = {
+						customer: request.to_customer,
+						balance: receiver,
+					};
+					await set("customers", update1, true);
+					await set("customers", update2, true);
+					done = true;
+				}
+			} else {
+				errorWrite.set(true);
 			}
-		}else{
-			errorWrite.set(true)
+		} else {
+			errorWrite.set(true);
 		}
 		writing.set(false);
 	}
