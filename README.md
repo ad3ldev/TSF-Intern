@@ -5,4 +5,4 @@ The GRIP web development internship at [The Sparks Foundation](https://internshi
 Each Project/Task is a branch of this repo.
 
 ## Tasks
-1- Basic Banking System
+- Basic Banking System
