@@ -2,6 +2,8 @@
 
 # Basic Banking System
 
+[Live Website](https://tsf-intern.vercel.app)
+
 A simple banking system, that only has 3 functions:
 
 -   Show a table of customers.
@@ -29,6 +31,9 @@ Supabase as a PostgreSQL database and Depolyed to Vercel
 ### Middleware
 
 Prisma to create the schema for SQL database.
+
+
+Icons used from [icon8](https://icons8.com).
 
 ---
 
