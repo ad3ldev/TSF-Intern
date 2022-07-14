@@ -60,6 +60,7 @@
 	<ul>
 		<li class="icon">
 			<a
+				sveltekit:reload
 				sveltekit:prefetch
 				href="/"
 				on:click={() => {
@@ -71,6 +72,7 @@
 		</li>
 		<li>
 			<a
+				sveltekit:reload
 				sveltekit:prefetch
 				class:active={home}
 				on:click={() => {
@@ -81,6 +83,7 @@
 		</li>
 		<li>
 			<a
+				sveltekit:reload
 				sveltekit:prefetch
 				class:active={customers}
 				on:click={() => {
@@ -91,6 +94,7 @@
 		</li>
 		<li>
 			<a
+				sveltekit:reload
 				sveltekit:prefetch
 				class:active={transfers}
 				on:click={() => {

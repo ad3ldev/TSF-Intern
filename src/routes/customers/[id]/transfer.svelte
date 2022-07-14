@@ -8,7 +8,7 @@
 	import { page } from "$app/stores";
 	let id = $page.params.id;
 
-	const [data, reading, errorRead, get] = dbStore();
+	let [data, reading, errorRead, get] = dbStore();
 	const [writing, errorWrite, set] = updateStore();
 	const [validData, validating, validError, validate] = validateStore();
 
@@ -90,6 +90,7 @@
 		} else {
 			errorWrite.set(true);
 		}
+		get("customers", "*", "account_num", `${id}`);
 		writing.set(false);
 	}
 </script>
