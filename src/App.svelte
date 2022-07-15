@@ -52,7 +52,7 @@
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>HEY {name}!</h1>
 	<button on:click={displayRazorpay}> Hello </button>
 </main>
 
