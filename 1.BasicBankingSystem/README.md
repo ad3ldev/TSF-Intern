@@ -12,7 +12,7 @@ A simple banking system, that only has 3 functions:
 
 ## Application Structure
 
-![App Structure](/app-structure.png)
+![App Structure](./app-structure.png)
 
 ## Technologies Used
 
